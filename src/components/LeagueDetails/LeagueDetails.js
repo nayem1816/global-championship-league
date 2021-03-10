@@ -18,6 +18,8 @@ const LeagueDetails = () => {
     }, [])
     console.log(league);
     const { strBanner, strLeague, strCountry, strGender, strSport, intFormedYear, strRSS, strTwitter, strYoutube } = league;
+    const twitterLink = "https://"+strTwitter;
+    const youtubeLink = "https://"+strYoutube;
     return (
         <div className="league-detail-part">
             <div className="league-banner">
@@ -35,7 +37,7 @@ const LeagueDetails = () => {
                         </div>
                     </div>
                     <div className="col-md-6 image-part">
-                        <img src={malePic} alt="" />
+                        {strGender ==='Male' ? <img src={malePic} alt="" /> : <img src={femalePic} alt="" />}
                     </div>
                 </div>
                 <div className="other-text-part">
@@ -44,10 +46,10 @@ const LeagueDetails = () => {
                 </div>
             </div>
             <div className="text-center pb-5 icon-style">
-                <a href={strRSS}><FontAwesomeIcon icon={faRssSquare} /></a>
-                <a href='https://www.facebook.com'><FontAwesomeIcon icon={faFacebookSquare} /></a>
-                <a href={`${strTwitter}`}><FontAwesomeIcon icon={faTwitterSquare} /></a>
-                <a href={strYoutube}><FontAwesomeIcon icon={faYoutubeSquare} /></a>
+                <a target="_blank" href={strRSS}><FontAwesomeIcon icon={faRssSquare} /></a>
+                <a target="_blank" href='https://www.facebook.com'><FontAwesomeIcon icon={faFacebookSquare} /></a>
+                <a target="_blank" href={`${twitterLink}`}><FontAwesomeIcon icon={faTwitterSquare} /></a>
+                <a target="_blank" href={youtubeLink}><FontAwesomeIcon icon={faYoutubeSquare} /></a>
             </div>
         </div>
     );

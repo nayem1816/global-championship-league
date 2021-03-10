@@ -6,7 +6,7 @@ const Banner = () => {
     return (
         <div className="banner-part mb-3">
             <img src={globalFootballLeague} alt="" />
-            <h1 className="centered">Global Football League</h1>
+            <h1 className="centered">Global Championship League</h1>
         </div>
     );
 };
