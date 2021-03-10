@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import femalePic from '../../photos/female.png';
 import malePic from '../../photos/male.png';
+import globalFootballLeague from '../../photos/global-football-league.jpg';
 import './LeagueDetails.css';
 
 const LeagueDetails = () => {
@@ -16,7 +17,6 @@ const LeagueDetails = () => {
             .then(res => res.json())
             .then(data => setLeague(data.leagues[0]))
     }, [])
-    console.log(league);
     const { strBanner, strLeague, strCountry, strGender, strSport, intFormedYear, strRSS, strTwitter, strYoutube } = league;
     const twitterLink = "https://"+strTwitter;
     const youtubeLink = "https://"+strYoutube;
@@ -24,7 +24,7 @@ const LeagueDetails = () => {
     return (
         <div className="league-detail-part">
             <div className="league-banner">
-                <img src={strBanner} alt="" />
+                {strBanner === null ? <img src={globalFootballLeague} alt="" /> : <img src={strBanner} alt="" />}
             </div>
             <div className="total-details-part container">
                 <div className="row details-banner m-5 p-3">
@@ -38,7 +38,7 @@ const LeagueDetails = () => {
                         </div>
                     </div>
                     <div className="col-md-6 image-part">
-                        {strGender ==='Male' ? <img src={malePic} alt="" /> : <img src={femalePic} alt="" />}
+                        {strGender ==='Female' ? <img src={femalePic} alt="" /> : <img src={malePic} alt="" />}
                     </div>
                 </div>
                 <div className="other-text-part">
