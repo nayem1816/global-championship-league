@@ -7,8 +7,6 @@ import {
 } from "react-router-dom";
 import Home from './components/Home/Home';
 import NotFound from './components/NotFound/NotFound';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {  } from '@fortawesome/free-solid-svg-icons'
 import LeagueDetails from './components/LeagueDetails/LeagueDetails';
 
 function App() {
