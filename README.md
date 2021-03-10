@@ -1,7 +1,7 @@
 # Assignment- 8 project
 # Project Name: Global Championship League
 # Assignment Live Project Link-
-Netlify: 
+Netlify: https://hardcore-kilby-3a6ef9.netlify.app/
 
 # Using react
 # Using react-router
