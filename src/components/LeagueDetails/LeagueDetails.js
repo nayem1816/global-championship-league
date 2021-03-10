@@ -17,10 +17,7 @@ const LeagueDetails = () => {
             .then(res => res.json())
             .then(data => setLeague(data.leagues[0]))
     }, [])
-    const { strBanner, strLeague, strCountry, strGender, strSport, intFormedYear, strRSS, strTwitter, strYoutube } = league;
-    const twitterLink = "https://"+strTwitter;
-    const youtubeLink = "https://"+strYoutube;
-    const rssLink = "https://"+strRSS;
+    const { strBanner, strLeague, strCountry, strGender, strSport, intFormedYear} = league;
     return (
         <div className="league-detail-part">
             <div className="league-banner">
@@ -47,10 +44,10 @@ const LeagueDetails = () => {
                 </div>
             </div>
             <div className="text-center pb-5 icon-style">
-                <a target="_blank" href={rssLink}><FontAwesomeIcon icon={faRssSquare} /></a>
+                <a target="_blank" href="https://www.rss.org/"><FontAwesomeIcon icon={faRssSquare} /></a>
                 <a target="_blank" href='https://www.facebook.com'><FontAwesomeIcon icon={faFacebookSquare} /></a>
-                <a target="_blank" href={`${twitterLink}`}><FontAwesomeIcon icon={faTwitterSquare} /></a>
-                <a target="_blank" href={youtubeLink}><FontAwesomeIcon icon={faYoutubeSquare} /></a>
+                <a target="_blank" href="https://twitter.com/home"><FontAwesomeIcon icon={faTwitterSquare} /></a>
+                <a target="_blank" href="https://www.youtube.com/"><FontAwesomeIcon icon={faYoutubeSquare} /></a>
             </div>
         </div>
     );
