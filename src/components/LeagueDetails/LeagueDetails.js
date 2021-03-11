@@ -7,6 +7,8 @@ import femalePic from '../../photos/female.png';
 import malePic from '../../photos/male.png';
 import globalFootballLeague from '../../photos/global-football-league.jpg';
 import './LeagueDetails.css';
+import Banner from '../Banner/Banner';
+import Footer from '../Footer/Footer';
 
 const LeagueDetails = () => {
     const { id } = useParams();
@@ -17,11 +19,13 @@ const LeagueDetails = () => {
             .then(res => res.json())
             .then(data => setLeague(data.leagues[0]))
     }, [])
-    const { strBanner, strLeague, strCountry, strGender, strSport, intFormedYear} = league;
+    // console.log(league);
+    const { strBanner, strLogo, strLeague, strCountry, strGender, strSport, intFormedYear, strDescriptionEN, strDescriptionFR} = league;
     return (
         <div className="league-detail-part">
             <div className="league-banner">
-                {strBanner === null ? <img src={globalFootballLeague} alt="" /> : <img src={strBanner} alt="" />}
+                <Banner logo = {strLogo} showLogo={true}></Banner>
+                {/* {strBanner === null ? <img src={globalFootballLeague} alt="" /> : <img src={strBanner} alt="" />} */}
             </div>
             <div className="total-details-part container">
                 <div className="row details-banner m-5 p-3">
@@ -39,15 +43,12 @@ const LeagueDetails = () => {
                     </div>
                 </div>
                 <div className="other-text-part">
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis neque veritatis est vel saepe aut, nostrum nulla aliquam id reprehenderit quod nisi libero beatae iste laboriosam numquam minus aliquid nobis dolorum obcaecati? Inventore qui ex, sit facere beatae explicabo, delectus consequuntur omnis natus temporibus dolores iusto! Vero labore assumenda excepturi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque in laboriosam ipsam velit voluptatem quam est beatae ipsum eos incidunt?</p>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis neque veritatis est vel saepe aut, nostrum nulla aliquam id reprehenderit quod nisi libero beatae iste laboriosam numquam minus aliquid nobis dolorum obcaecati? Inventore qui ex, sit facere beatae explicabo, delectus consequuntur omnis natus temporibus dolores iusto! Vero labore assumenda excepturi.</p>
+                    <p>{strDescriptionEN}</p>
+                    <p>{strDescriptionFR}</p>
                 </div>
             </div>
             <div className="text-center pb-5 icon-style">
-                <a target="_blank" href="https://www.rss.org/"><FontAwesomeIcon icon={faRssSquare} /></a>
-                <a target="_blank" href='https://www.facebook.com'><FontAwesomeIcon icon={faFacebookSquare} /></a>
-                <a target="_blank" href="https://twitter.com/home"><FontAwesomeIcon icon={faTwitterSquare} /></a>
-                <a target="_blank" href="https://www.youtube.com/"><FontAwesomeIcon icon={faYoutubeSquare} /></a>
+                <Footer></Footer>
             </div>
         </div>
     );
