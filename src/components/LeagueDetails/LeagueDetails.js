@@ -1,5 +1,4 @@
-import { faFacebookSquare, faTwitterSquare, faYoutubeSquare } from '@fortawesome/free-brands-svg-icons';
-import {faFlag, faFutbol, faPodcast, faRssSquare, faVenusMars } from '@fortawesome/free-solid-svg-icons';
+import {faFlag, faFutbol, faPodcast, faVenusMars } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
@@ -19,7 +18,6 @@ const LeagueDetails = () => {
             .then(res => res.json())
             .then(data => setLeague(data.leagues[0]))
     }, [])
-    // console.log(league);
     const { strBanner, strLogo, strLeague, strCountry, strGender, strSport, intFormedYear, strDescriptionEN, strDescriptionFR} = league;
     return (
         <div className="league-detail-part">
@@ -48,7 +46,7 @@ const LeagueDetails = () => {
                 </div>
             </div>
             <div className="text-center pb-5 icon-style">
-                <Footer></Footer>
+                <Footer league={league}></Footer>
             </div>
         </div>
     );
