@@ -4,11 +4,16 @@ import './Banner.css';
 
 const Banner = (props) => {
     const logo = props.logo;
-    const showLogo = props.showLogo;
+    const banner = props.banner;
+    const showLogoBanner = props.showLogoBanner;
     return (
         <div className="banner-part mb-3">
-            <img className="banner-img" src={globalFootballLeague} alt="" />
-            {showLogo === true ? <img className="centered center-image" src={logo} alt=""/> :  <h1 className="centered">Global Championship League</h1>}
+            {
+                showLogoBanner === true && banner !== null ? <img className="banner-img banner-opacity" src={banner} alt="" /> : <img className="banner-img" src={globalFootballLeague} alt="" />
+            }
+            {
+                showLogoBanner === true ? <img className="centered center-image" src={logo} alt="" /> : <h1 className="centered">Global Championship League</h1>
+            }
         </div>
     );
 };

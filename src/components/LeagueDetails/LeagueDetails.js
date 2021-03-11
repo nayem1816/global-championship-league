@@ -24,11 +24,11 @@ const LeagueDetails = () => {
     return (
         <div className="league-detail-part">
             <div className="league-banner">
-                <Banner logo = {strLogo} showLogo={true}></Banner>
+                <Banner logo = {strLogo} banner={strBanner} showLogoBanner={true}></Banner>
                 {/* {strBanner === null ? <img src={globalFootballLeague} alt="" /> : <img src={strBanner} alt="" />} */}
             </div>
             <div className="total-details-part container">
-                <div className="row details-banner m-5 p-3">
+                <div className="row details-banner m-3 p-3">
                     <div className="col-md-6 league-detail-text d-flex align-items-center">
                         <div className="">
                             <h2 className="mb-4">{strLeague}</h2>

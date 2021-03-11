@@ -10,6 +10,10 @@
     filter: blur(1px);
     opacity: .6;
 }
+.banner-opacity{
+    filter: blur(2px);
+    opacity: .4;
+}
 .centered{
     position: absolute;
     top: 50%;
@@ -20,4 +24,7 @@
     width: 400px;
     height: 150px;
     border: none;
+    background-color:rgba(0, 0, 0, 0.651);
+    padding: 20px;
+    border-radius: 20px;
 }
